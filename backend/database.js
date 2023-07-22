@@ -1,4 +1,3 @@
-// database.js
 const sqlite3 = require("sqlite3").verbose();
 
 const DB_PATH = "./data/mydatabase.db";
@@ -176,4 +175,5 @@ module.exports = {
     updateStudent,
     updateTeacher
 };
+
 
