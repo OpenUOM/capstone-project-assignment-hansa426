@@ -7,7 +7,6 @@ import { EditTeacherComponent } from './components/edit-teacher/edit-teacher.com
 import { StudentTableComponent } from './components/student-table/student-table.component';
 import { TeacherTableComponent } from './components/teacher-table/teacher-table.component';
 
-
 const routes: Routes = [
   { path: '', component: TeacherTableComponent },
   { path: 'student', component: StudentTableComponent },
