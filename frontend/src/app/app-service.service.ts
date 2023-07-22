@@ -6,58 +6,69 @@ import { environment } from './../environments/environment';
   providedIn: 'root'
 })
 export class AppServiceService {
-
   readonly ROOT_URL;
 
   constructor(private http: HttpClient) {
-    if(environment.production == false){
-      this.ROOT_URL = 'test'
-    }else{
-      this.ROOT_URL = 'api'
+    // Determine the root URL based on the environment (production or development)
+    if (environment.production == false) {
+      this.ROOT_URL = 'test';
+    } else {
+      this.ROOT_URL = 'api';
     }
   }
 
-  initializeDB(){
-    return this.http.get(`/${this.ROOT_URL}/dbinitialize`)
+  // Method to initialize the database
+  initializeDB() {
+    return this.http.get(`/${this.ROOT_URL}/dbinitialize`);
   }
 
-  getTeacherData(){
-    return this.http.get(`/${this.ROOT_URL}/listTeachers`)
+  // Method to retrieve teacher data
+  getTeacherData() {
+    return this.http.get(`/${this.ROOT_URL}/listTeachers`);
   }
 
-  getStudentData(){
-    return this.http.get(`/${this.ROOT_URL}/listStudents`)
+  // Method to retrieve student data
+  getStudentData() {
+    return this.http.get(`/${this.ROOT_URL}/listStudents`);
   }
 
-  getOneStudentData(payload: Object){
-    return this.http.post(`/${this.ROOT_URL}/getStudentInfo`, payload)
+  // Method to retrieve information of a single student
+  getOneStudentData(payload: Object) {
+    return this.http.post(`/${this.ROOT_URL}/getStudentInfo`, payload);
   }
 
-  getOneTeacherData(payload: Object){
-    return this.http.post(`/${this.ROOT_URL}/getTeacherInfo`, payload)
+  // Method to retrieve information of a single teacher
+  getOneTeacherData(payload: Object) {
+    return this.http.post(`/${this.ROOT_URL}/getTeacherInfo`, payload);
   }
 
-  addTeacher(payload: Object){
-    return this.http.post(`/${this.ROOT_URL}/addTeacher`, payload)
+  // Method to add a teacher
+  addTeacher(payload: Object) {
+    return this.http.post(`/${this.ROOT_URL}/addTeacher`, payload);
   }
 
-  deleteTeacher(payload: Object){
-    return this.http.post(`/${this.ROOT_URL}/deleteTeacher`, payload)
+  // Method to delete a teacher
+  deleteTeacher(payload: Object) {
+    return this.http.post(`/${this.ROOT_URL}/deleteTeacher`, payload);
   }
 
-  editTeacher(payload: Object){
-    return this.http.post(`/${this.ROOT_URL}/editTeacher`, payload)
+  // Method to edit teacher details
+  editTeacher(payload: Object) {
+    return this.http.post(`/${this.ROOT_URL}/editTeacher`, payload);
   }
 
-  editStudent(payload: Object){
-    return this.http.post(`/${this.ROOT_URL}/editStudent`, payload)
+  // Method to edit student details
+  editStudent(payload: Object) {
+    return this.http.post(`/${this.ROOT_URL}/editStudent`, payload);
   }
 
-  addStudent(payload: Object){
-    return this.http.post(`/${this.ROOT_URL}/addStudent`, payload)
+  // Method to add a student
+  addStudent(payload: Object) {
+    return this.http.post(`/${this.ROOT_URL}/addStudent`, payload);
   }
 
-  deleteStudent(payload: Object){
-    return this.http.post(`/${this.ROOT_URL}/deleteStudent`, payload)
+  // Method to delete a student
+  deleteStudent(payload: Object) {
+    return this.http.post(`/${this.ROOT_URL}/deleteStudent`, payload);
   }
 }
